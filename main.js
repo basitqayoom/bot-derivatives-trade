@@ -16,7 +16,7 @@ let main = (interval) => {
       let finalResponse = await index(interval, coin_list);
       if (finalResponse) {
         // SENDING TO TWITTER AND TELEGRAM
-        // Tweet(finalResponse.message, "Confirm Calls");
+        Tweet(finalResponse.message, "Confirm Calls");
         Telegram(finalResponse.message, "Confirm Calls");
 
         // Binance trade
@@ -110,54 +110,3 @@ var job_1M = new CronJob(
 );
 job_1M.start();
 console.log("Started for 1M");
-
-// // TESTING TIME FRAMES
-// var Testing1 = new CronJob(
-//   "00 */1 * * * *",
-//   main("1m"),
-//   null,
-//   true,
-//   "Asia/Kolkata"
-// );
-// console.log("Started for 15m A");
-// Testing1.start();
-
-// var Testing2 = new CronJob(
-//   "00 */1 * * * *",
-//   main("15m"),
-//   null,
-//   true,
-//   "Asia/Kolkata"
-// );
-// console.log("Started for 15m B");
-// Testing2.start();
-
-// var Testing3 = new CronJob(
-//   "00 */1 * * * *",
-//   main("15m"),
-//   null,
-//   true,
-//   "Asia/Kolkata"
-// );
-// console.log("Started for 15m C");
-// Testing3.start();
-
-// var Testing4 = new CronJob(
-//   "00 */1 * * * *",
-//   main("15m"),
-//   null,
-//   true,
-//   "Asia/Kolkata"
-// );
-// console.log("Started for 15m D");
-// Testing4.start();
-
-// var Testing5 = new CronJob(
-//   "00 */1 * * * *",
-//   main("15m"),
-//   null,
-//   true,
-//   "Asia/Kolkata"
-// );
-// console.log("Started for 15m E");
-// Testing5.start();
